@@ -1,5 +1,5 @@
 .hamburger {
-  padding: 15px 15px;
+  padding: 15px 5px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -92,19 +92,34 @@ html {
   background-image: url("../img/backgrounddeco.PNG");
   scroll-behavior: smooth;
   overflow-x: hidden;
+  padding-right: 15px;
 }
 
 * {
   -webkit-appearance: none;
+  -ms-appearance: none;
   color: #BFC133;
-  font-family: "Josefin Sans", sans-serif;
-}
-* p, * ::placeholder, * li, * h3 {
   font-weight: 400;
   font-family: "Poppins", sans-serif;
 }
-* h1 {
+* p, * ::placeholder, * li, * h3, * a, * button {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+* h1, * h2 {
   font-weight: 700;
+  font-size: 2.5rem;
+  font-family: "Limelight", cursive;
+}
+* input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+* input[type=email]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
 }
 * a {
   text-decoration: none;
@@ -127,16 +142,17 @@ html {
   background-color: #333645;
   color: #fff;
   border-radius: 3px;
+  border: 1px solid #BFC133;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
   font-size: 1.125rem;
-  height: 100px;
-  width: 100px;
-  margin: -15px -15px;
-  position: sticky;
-  top: 0;
-  left: 0px;
+  height: 80px;
+  width: 120px;
+  position: fixed;
+  top: 0%;
+  left: 86%;
   z-index: 3;
-  transition: transform 0.3s;
-  float: left;
+  transition: background-color 0.3s;
+  padding-right: 50px;
 }
 .hamburger:hover {
   background-color: #22242e;
@@ -146,6 +162,7 @@ html {
   background-color: #333645;
   font-size: 1.5rem;
   position: sticky;
+  position: fixed;
   top: 0;
   left: -600px;
   margin: -15px 0px;
@@ -165,16 +182,13 @@ html {
 
 .sticky-hand {
   position: sticky;
+  position: fixed;
   top: 85%;
-  left: 0;
+  left: 86%;
+  margin: 0 auto;
   display: block;
   z-index: 2;
   height: 80px;
-}
-.sticky-hand > a {
-  position: absolute;
-  top: 0%;
-  left: 85%;
 }
 .sticky-hand > a > i {
   font-size: 4rem;
@@ -196,6 +210,7 @@ html {
 
 .navigation-bar {
   position: sticky;
+  position: fixed;
   top: 0;
   background: linear-gradient(180deg, #333645, #000, #333645);
   border-bottom: #BFC133 5px solid;
@@ -204,7 +219,7 @@ html {
   margin: 0 0;
   margin-top: -10px;
   margin-left: -10px;
-  width: 99.5vw;
+  width: 99.25vw;
   z-index: 2;
 }
 .navigation-bar > .nav-container {
@@ -218,7 +233,8 @@ html {
 }
 
 .hero-image {
-  margin: 0 auto;
+  margin: 30px auto;
+  margin-top: 200px;
   background: linear-gradient(275deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
   background-repeat: no-repeat;
   display: flex;
@@ -229,17 +245,12 @@ html {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  height: 6rem;
-  width: 300px;
+  height: 200px;
   background: linear-gradient(180deg, #333645, #000, #333645);
-  padding: 20px 30px;
-}
-.hero-image > .hero-text > h1 {
-  font-size: 2rem;
+  padding: 10px 30px;
 }
 .hero-image > .hero-text > h2 {
   font-size: 1.5rem;
-  padding-bottom: 30px;
 }
 .hero-image > img {
   height: 400px;
@@ -249,9 +260,9 @@ html {
 
 .project {
   border: 1px solid #BFC133;
-  padding: 50px 50px;
+  padding: 20px 50px;
   width: 300px;
-  height: 250px;
+  height: 350px;
   margin: 30px auto;
   background: linear-gradient(180deg, #333645, #000);
   transition: border-color 0.3s;
@@ -264,11 +275,11 @@ html {
 .project:hover > a img {
   border-color: #fff;
 }
-.project:hover > a button {
+.project:hover > a button, .project:hover p {
   color: #fff;
   border-color: #fff;
 }
-.project:hover > a button > i {
+.project:hover > a button > i, .project:hover p > i {
   color: #fff;
 }
 .project > a {
@@ -294,11 +305,13 @@ html {
 .project > a > button {
   border: 1px solid #BFC133;
   background-color: #000;
-  font-size: 0.75rem;
+  font-size: 1rem;
   padding: 10px 10px;
   border-radius: 3px;
-  width: 45%;
+  width: 100%;
   margin: 0 auto;
+  margin-top: 15px;
+  font-weight: 700;
   display: block;
   transition: color 0.3s, border-color 0.3s;
 }
@@ -309,21 +322,18 @@ html {
 .folio-thumbs {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 80%;
   margin: 40px auto;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }
 
 footer {
   background: linear-gradient(180deg, #333645, #000, #333645);
   border-top: 5px solid #BFC133;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
   width: 99.5vw;
   margin-bottom: -30px;
   margin-left: -10px;
-  height: 100%;
+  min-height: 20vw;
 }
 footer > .contact {
   padding: 20px 30px;
@@ -334,11 +344,11 @@ footer > .contact > .contact-form {
 footer > .contact > .contact-form input {
   height: 45px;
   display: block;
-  width: 40%;
+  width: 60%;
   border: #BFC133 3px solid;
   border-radius: 3px;
   background: none;
-  margin: 15px auto;
+  margin: 25px auto;
   padding: 15px 30px;
   transition: color 0.3s, border-color 0.3s;
 }
@@ -348,13 +358,13 @@ footer > .contact > .contact-form input:hover {
 }
 footer > .contact > button {
   height: 50px;
-  width: 20%;
+  width: 40%;
   display: block;
   margin: 30px auto;
   background: #000;
   border: #BFC133 3px solid;
-  padding: 15px 10px;
-  text-align: center;
+  padding: 5px 10px;
+  font-weight: 700;
   transition: color 0.3s, border-color 0.3s;
 }
 footer > .contact > button:hover {
@@ -376,9 +386,11 @@ footer > .details > ul {
   height: 100%;
   margin: 0 auto;
   margin-bottom: 30px;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .text-block > .text-con {
-  height: 100%;
+  height: auto;
   border: 3px #BFC133 solid;
   border-radius: 5px;
   background: linear-gradient(180deg, #333645, #000, #333645);
@@ -398,49 +410,63 @@ footer > .details > ul {
   padding-bottom: 0;
 }
 
-@media only screen and (max-width: 786px) {
+@media only screen and (max-width: 480px) {
   .navigation-bar {
     display: none;
     height: 0px;
   }
-  .navigation-bar > .nav-container {
-    width: 428px;
+
+  .hero-image, .nav-container, .folio-thumbs, .contact, .details, .text-con {
+    width: 480px;
+    margin: 0 auto;
   }
 
   .hero-image {
-    width: 428px;
+    width: 480px;
     margin: 0 auto;
     margin-top: 0;
     padding-top: 0;
     align-items: center;
   }
   .hero-image > img {
-    height: auto;
     margin: 0 auto;
-    width: 80vw;
   }
   .hero-image > .hero-text {
     align-items: center;
-    height: 150px;
     font-size: 0.8rem;
-    margin: 0 auto;
-  }
-
-  .folio-thumbs, .contact, .details, .text-con {
-    width: 428px;
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 786px) {
-  .nav-container > .hlink {
-    font-size: 12px;
+@media only screen and (min-width: 480px) {
+  .navigation-bar {
+    display: none;
+    height: 0px;
   }
-  .nav-container > .hlink > i {
-    font-size: 2rem;
-    line-height: 10px;
+
+  .hero-image, .nav-container, .folio-thumbs, .contact, .details, .text-con {
+    width: 480px;
   }
-  .nav-container > i {
+
+  .hero-image {
+    width: 480px;
+    margin: 0 auto;
+    margin-top: 0;
+    padding-top: 0;
+    align-items: center;
+  }
+  .hero-image > img {
+    margin: 0 auto;
+  }
+  .hero-image > .hero-text {
+    align-items: center;
     font-size: 0.8rem;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .navigation-bar {
+    display: flex;
+    height: auto;
   }
 
   .hamburger {
@@ -448,11 +474,47 @@ footer > .details > ul {
   }
 
   .hero-image {
-    display: block;
-    width: 786px;
+    width: 768px;
+    margin: 0 auto;
+    margin-top: 0;
+    padding-top: 0;
+    align-items: center;
+  }
+  .hero-image > img {
+    margin: 0 auto;
   }
   .hero-image > .hero-text {
-    height: 8rem;
+    align-items: center;
+    font-size: 0.8rem;
+    margin: 0 auto;
+  }
+
+  .folio-thumbs, .contact, .details, .text-con {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .nav-container {
+    width: 1024px;
+  }
+  .nav-container > .hlink {
+    font-size: 12px;
+  }
+  .nav-container > .hlink > i {
+    font-size: 1.5rem;
+    line-height: 10px;
+  }
+  .nav-container > i {
+    font-size: 0.8rem;
+    line-height: 35px;
+  }
+
+  .hero-image {
+    display: block;
+    width: 1024;
+  }
+  .hero-image > .hero-text {
     float: right;
     margin: 0 auto;
   }
@@ -469,7 +531,7 @@ footer > .details > ul {
 
   .folio-thumbs {
     padding-top: 200px;
-    width: 786px;
+    width: 1024px;
   }
   .folio-thumbs > .project {
     width: 30%;
@@ -488,47 +550,41 @@ footer > .details > ul {
   .contact {
     justify-content: center;
     margin: 0 auto;
-    max-width: 786px;
+    max-width: 1024px;
   }
   .contact .contact-form {
     display: flex;
     flex-wrap: wrap;
   }
   .contact .contact-form > input {
-    width: 40%;
+    width: 30%;
     display: block;
   }
 
   .details {
     margin: 0 auto;
-    max-width: 786px;
+    max-width: 1024px;
   }
 
   .text-con {
     margin: 0 auto;
-    max-width: 786px;
+    max-width: 1024px;
   }
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1280px) {
   .hero-image, .nav-container, .folio-thumbs, .contact, .details, .text-con {
-    width: 992px;
+    width: 1280px;
   }
 
   .folio-thumbs > .project {
     width: 20%;
+    margin: 30px 15px;
   }
 }
-@media only screen and (min-width: 1080px) {
-  .hero-image, .nav-container, .folio-thumbs, .contact, .details, .text-con {
-    width: 1080px;
-  }
-
-  .folio-thumbs {
-    justify-content: space-between;
-  }
-  .folio-thumbs > .project {
-    max-width: 50%;
-    margin: 30px auto;
+@media screen and (-ms-high-contrast: active) {
+  p, ::placeholder, li, h3, a, button {
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
   }
 }
 
