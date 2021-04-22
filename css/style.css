@@ -92,7 +92,6 @@ html {
   background-image: url("../img/backgrounddeco.PNG");
   scroll-behavior: smooth;
   overflow-x: hidden;
-  padding-right: 15px;
 }
 
 * {
@@ -181,7 +180,6 @@ html {
 }
 
 .sticky-hand {
-  position: sticky;
   position: fixed;
   top: 85%;
   left: 86%;
@@ -208,19 +206,45 @@ html {
   }
 }
 
+.sticky-house {
+  position: fixed;
+  top: 1%;
+  left: 6%;
+  margin: 0 auto;
+  display: block;
+  z-index: 2;
+  height: 65px;
+}
+.sticky-house > a > i {
+  font-size: 4rem;
+  transition: transform 0.3s;
+}
+.sticky-house > a > i:hover {
+  animation-iteration-count: infinite;
+  animation-name: rotate;
+  animation-duration: 1.3s;
+}
+@keyframes rotate {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
 .navigation-bar {
   position: sticky;
   position: fixed;
   top: 0;
-  background: linear-gradient(180deg, #333645, #000, #333645);
+  background: linear-gradient(180deg, #000, #333645);
   border-bottom: #BFC133 5px solid;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  margin: 0 0;
+  margin: 0 auto;
   margin-top: -10px;
   margin-left: -10px;
-  width: 99.25vw;
+  width: 100%;
   z-index: 2;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
 }
 .navigation-bar > .nav-container {
   padding: 30px 60px;
@@ -246,7 +270,7 @@ html {
   display: flex;
   flex-direction: column;
   height: 200px;
-  background: linear-gradient(180deg, #333645, #000, #333645);
+  background: linear-gradient(180deg, #333645, #000);
   padding: 10px 30px;
 }
 .hero-image > .hero-text > h2 {
@@ -259,12 +283,14 @@ html {
 }
 
 .project {
-  border: 1px solid #BFC133;
+  border: 3px solid #BFC133;
   padding: 20px 50px;
   width: 300px;
   height: 350px;
-  margin: 30px auto;
+  margin: 0 auto;
+  margin-bottom: 30px;
   background: linear-gradient(180deg, #333645, #000);
+  box-shadow: 5px 15px rgba(0, 0, 0, 0.5);
   transition: border-color 0.3s;
   font-size: 1.2rem;
 }
@@ -324,19 +350,21 @@ html {
   flex-direction: row;
   width: 80%;
   margin: 40px auto;
+  margin-top: 10px;
   flex-wrap: wrap;
 }
 
 footer {
-  background: linear-gradient(180deg, #333645, #000, #333645);
+  background: linear-gradient(180deg, #333645, #000);
   border-top: 5px solid #BFC133;
-  width: 99.5vw;
+  width: 100vw;
   margin-bottom: -30px;
   margin-left: -10px;
   min-height: 20vw;
 }
 footer > .contact {
-  padding: 20px 30px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
 footer > .contact > .contact-form {
   font-size: 1.1rem;
@@ -390,11 +418,14 @@ footer > .details > ul {
   padding-bottom: 200px;
 }
 .text-block > .text-con {
+  width: 50%;
   height: auto;
-  border: 3px #BFC133 solid;
+  border: 5px #BFC133 solid;
   border-radius: 5px;
-  background: linear-gradient(180deg, #333645, #000, #333645);
+  background: linear-gradient(180deg, #333645, #000);
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
   padding: 30px 30px;
+  margin: 0 auto;
 }
 .text-block > .text-con > p {
   line-height: 1.5rem;
@@ -415,58 +446,30 @@ footer > .details > ul {
     display: none;
     height: 0px;
   }
-
-  .hero-image, .nav-container, .folio-thumbs, .contact, .details, .text-con {
-    width: 480px;
-    margin: 0 auto;
-  }
-
-  .hero-image {
-    width: 480px;
-    margin: 0 auto;
-    margin-top: 0;
-    padding-top: 0;
-    align-items: center;
-  }
-  .hero-image > img {
-    margin: 0 auto;
-  }
-  .hero-image > .hero-text {
-    align-items: center;
-    font-size: 0.8rem;
-    margin: 0 auto;
-  }
 }
 @media only screen and (min-width: 480px) {
   .navigation-bar {
     display: none;
     height: 0px;
   }
-
-  .hero-image, .nav-container, .folio-thumbs, .contact, .details, .text-con {
-    width: 480px;
+  .navigation-bar > .nav-container > a, .navigation-bar > .nav-container i {
+    font-size: 1rem;
   }
-
-  .hero-image {
-    width: 480px;
-    margin: 0 auto;
-    margin-top: 0;
-    padding-top: 0;
-    align-items: center;
-  }
-  .hero-image > img {
-    margin: 0 auto;
-  }
-  .hero-image > .hero-text {
-    align-items: center;
-    font-size: 0.8rem;
-    margin: 0 auto;
+  .navigation-bar > .nav-container > i {
+    line-height: 30px;
   }
 }
 @media only screen and (min-width: 768px) {
   .navigation-bar {
     display: flex;
     height: auto;
+  }
+  .navigation-bar > .nav-container {
+    width: 768px;
+  }
+  .navigation-bar > .nav-container > a, .navigation-bar > .nav-container i {
+    font-size: 1.2rem;
+    margin: 0 5px;
   }
 
   .hamburger {
@@ -476,7 +479,7 @@ footer > .details > ul {
   .hero-image {
     width: 768px;
     margin: 0 auto;
-    margin-top: 0;
+    margin-top: 150px;
     padding-top: 0;
     align-items: center;
   }
@@ -489,9 +492,25 @@ footer > .details > ul {
     margin: 0 auto;
   }
 
-  .folio-thumbs, .contact, .details, .text-con {
-    width: 768px;
+  .contact {
+    justify-content: center;
     margin: 0 auto;
+    max-width: 768px;
+  }
+  .contact .contact-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .contact .contact-form > input {
+    max-width: 40%;
+    display: block;
+  }
+
+  .sticky-house {
+    top: 20%;
+    left: 6%;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -511,15 +530,19 @@ footer > .details > ul {
   }
 
   .hero-image {
-    display: block;
+    display: flex;
     width: 1024;
+    padding: 0 30px;
   }
   .hero-image > .hero-text {
-    float: right;
+    width: 50%;
     margin: 0 auto;
+    float: left;
   }
   .hero-image > img {
-    float: left;
+    height: 300px;
+    float: right;
+    transform: scaleX(-1);
     display: block;
     margin: 0 auto;
   }
@@ -530,7 +553,7 @@ footer > .details > ul {
   }
 
   .folio-thumbs {
-    padding-top: 200px;
+    padding-top: 80px;
     width: 1024px;
   }
   .folio-thumbs > .project {
@@ -539,7 +562,7 @@ footer > .details > ul {
     padding: 50px 50px;
   }
   .folio-thumbs > .project > a button {
-    width: 55%;
+    width: 100%;
     display: block;
     margin-top: 15px;
   }
@@ -554,10 +577,12 @@ footer > .details > ul {
   }
   .contact .contact-form {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
   .contact .contact-form > input {
-    width: 30%;
+    max-width: 40%;
     display: block;
   }
 
@@ -572,10 +597,6 @@ footer > .details > ul {
   }
 }
 @media only screen and (min-width: 1280px) {
-  .hero-image, .nav-container, .folio-thumbs, .contact, .details, .text-con {
-    width: 1280px;
-  }
-
   .folio-thumbs > .project {
     width: 20%;
     margin: 30px 15px;
