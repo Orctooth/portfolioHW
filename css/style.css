@@ -307,17 +307,17 @@ html {
 .project:hover > a img {
   border-color: #fff;
 }
-.project:hover > a button, .project:hover p {
+.project:hover > button, .project:hover p {
   color: #fff;
   border-color: #fff;
 }
-.project:hover > a button > i, .project:hover p > i {
+.project:hover > button > i, .project:hover p > i {
   color: #fff;
 }
 .project > a {
   display: flex;
   flex-wrap: wrap;
-  padding: 30px 15x;
+  padding: 30px 15px;
 }
 .project > a > img {
   border: 1px solid #BFC133;
@@ -334,7 +334,7 @@ html {
   display: block;
   margin-bottom: 15px;
 }
-.project > a > button {
+.project > button {
   border: 1px solid #BFC133;
   background-color: #000;
   font-size: 1rem;
@@ -347,7 +347,7 @@ html {
   display: block;
   transition: color 0.3s, border-color 0.3s;
 }
-.project > a > button > i {
+.project > button > i {
   transition: color 0.3s;
 }
 
@@ -600,7 +600,7 @@ footer > .details > ul {
 
   .hero-image {
     display: flex;
-    width: 1024;
+    width: 1024px;
     padding: 0 30px;
   }
   .hero-image > .hero-text {
